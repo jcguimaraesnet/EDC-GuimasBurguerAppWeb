@@ -1,0 +1,26 @@
+﻿@page "/hamburguer/{slug}/{id}"
+@model GuimasBurguerAppWeb.Pages.DetailsModel
+
+<h2 class="my-3">@Model.Hamburguer.Nome</h2>
+
+<div class="row">
+    
+    <div class="col-4">
+        <img class="img-fluid rounded" src="@Model.Hamburguer.ImagemUri">
+    </div>
+
+    <div class="col-6">
+        <h4 class="my-3">Sobre:</h4>
+        <p>@Model.Hamburguer.Descricao</p>
+        <h4 class="my-3">Mais Info:</h4>
+        <ul>
+            <li><label asp-for="Hamburguer.Preco"></label>: @Html.DisplayFor(model => model.Hamburguer.Preco)</li>
+            <li><label asp-for="Hamburguer.EntregaExpressa"></label>: @Model.Hamburguer.EntregaExpressaFormatada</li>
+            <li><label asp-for="Hamburguer.DataCadastro"></label>: @Html.DisplayFor(model => model.Hamburguer.DataCadastro)</li>
+        </ul>
+        <a class="btn my-3 btn-primary" 
+        asp-page="Edit" asp-route-id="@Model.Hamburguer.HamburguerId">Editar</a>
+    </div>
+
+</div>
+

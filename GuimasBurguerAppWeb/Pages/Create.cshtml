@@ -1,0 +1,58 @@
+﻿@page
+@model GuimasBurguerAppWeb.Pages.CreateModel
+
+<div class="row pt-5">
+    <div class="col-md-4">
+        <form method="post">
+            <h4>Inclusão de Hamburguer</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Hamburguer.Nome" class="control-label"></label>
+                <input asp-for="Hamburguer.Nome" class="form-control" />
+                <span asp-validation-for="Hamburguer.Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Hamburguer.Descricao" class="control-label"></label>
+                <input asp-for="Hamburguer.Descricao" class="form-control" />
+                <span asp-validation-for="Hamburguer.Descricao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Hamburguer.ImagemUri" class="control-label"></label>
+                <input asp-for="Hamburguer.ImagemUri" class="form-control" />
+                <span asp-validation-for="Hamburguer.ImagemUri" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Hamburguer.Preco" class="control-label"></label>
+                <input asp-for="Hamburguer.Preco" class="form-control" />
+                <span asp-validation-for="Hamburguer.Preco" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3 mb-3">
+                <input class="form-check-input" asp-for="Hamburguer.EntregaExpressa" />
+                <label asp-for="Hamburguer.EntregaExpressa" style="margin-left: 15px"></label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Hamburguer.DataCadastro" class="control-label"></label>
+                <input asp-for="Hamburguer.DataCadastro" class="form-control" />
+                <span asp-validation-for="Hamburguer.DataCadastro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
