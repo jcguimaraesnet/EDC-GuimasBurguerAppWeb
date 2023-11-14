@@ -35,6 +35,8 @@ namespace GuimasBurguerAppWeb.Pages
         {
             _service.Excluir(Hamburguer.HamburguerId);
 
+            TempData["TempMensagemSucesso"] = true;
+
             return RedirectToPage("/Index");
         }
     }
