@@ -11,7 +11,7 @@ public class Hamburguer
     [StringLength(50, MinimumLength = 10, ErrorMessage = "Campo 'Nome'deve conter entre 10 e 50 caracteres.")]
     public string Nome { get; set; }
 
-    public string NomeSlug => Nome.ToLower().Replace(" ", "-");
+    public string NomeSlug => Nome?.ToLower().Replace(" ", "-");
 
     [Display(Name = "Descrição")]
     [Required(AllowEmptyStrings = false, ErrorMessage = "Campo 'Descrição' obrigatório.")]
