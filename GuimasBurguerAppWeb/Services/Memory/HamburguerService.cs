@@ -1,6 +1,6 @@
 ﻿using GuimasBurguerAppWeb.Models;
 
-namespace GuimasBurguerAppWeb.Services;
+namespace GuimasBurguerAppWeb.Services.Memory;
 
 public class HamburguerService : IHamburguerService
 {
@@ -66,7 +66,7 @@ public class HamburguerService : IHamburguerService
 
     public void Incluir(Hamburguer hamburguer)
     {
-        var proximoNumero = _hamburguers.Max(item =>  item.HamburguerId) + 1;
+        var proximoNumero = _hamburguers.Max(item => item.HamburguerId) + 1;
         hamburguer.HamburguerId = proximoNumero;
         _hamburguers.Add(hamburguer);
     }
@@ -79,11 +79,22 @@ public class HamburguerService : IHamburguerService
         hamburguerEncontrado.Preco = hamburguer.Preco;
         hamburguerEncontrado.EntregaExpressa = hamburguer.EntregaExpressa;
         hamburguerEncontrado.DataCadastro = hamburguer.DataCadastro;
+        hamburguerEncontrado.ImagemUri = hamburguer.ImagemUri;
     }
 
     public void Excluir(int id)
     {
         var hamburguerEncontrado = Obter(id);
         _hamburguers.Remove(hamburguerEncontrado);
+    }
+
+    public IList<Marca> ObterTodasAsMarcas()
+    {
+        return new List<Marca>()
+        {
+            new Marca() { Descricao = "Sadia" },
+            new Marca() { Descricao = "Perdigão" },
+            new Marca() { Descricao = "Seara" },
+        };
     }
 }

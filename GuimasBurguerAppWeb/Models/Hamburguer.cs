@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GuimasBurguerAppWeb.Models;
 
@@ -20,7 +21,7 @@ public class Hamburguer
     [Display(Name = "Caminho da Imagem")]
     [Required(AllowEmptyStrings = false, ErrorMessage = "Campo 'Caminho da Image' obrigatório.")]
     public string ImagemUri { get; set; }
-    
+
     [Display(Name = "Preço")]
     [Required(ErrorMessage = "Campo 'Preço' obrigatório.")]
     [DataType(DataType.Currency)]
@@ -36,5 +37,7 @@ public class Hamburguer
     [DataType("month")]
     [DisplayFormat(DataFormatString = "{0:MMMM \\de yyyy}")]
     public DateTime DataCadastro { get; set; }
+
+    public int? MarcaId { get; set; }
 
 }

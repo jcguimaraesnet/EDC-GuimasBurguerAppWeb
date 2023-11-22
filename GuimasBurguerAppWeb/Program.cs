@@ -1,10 +1,16 @@
+using GuimasBurguerAppWeb.Data;
 using GuimasBurguerAppWeb.Services;
+using GuimasBurguerAppWeb.Services.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IHamburguerService, HamburguerService>();
+builder.Services.AddTransient<IHamburguerService, HamburguerService>();
+
+builder.Services.AddDbContext<HamburgueriaDbContext>();
+
 
 var app = builder.Build();
 
