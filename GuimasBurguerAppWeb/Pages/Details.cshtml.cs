@@ -15,10 +15,12 @@ public class DetailsModel : PageModel
     }
 
     public Hamburguer Hamburguer { get; private set; }
+    public Marca Marca { get; private set; }
 
     public IActionResult OnGet(int id)
     {
         Hamburguer = _service.Obter(id);
+        Marca = _service.ObterTodasAsMarcas().SingleOrDefault(item => item.MarcaId == Hamburguer.MarcaId);
 
         if (Hamburguer == null)
         {

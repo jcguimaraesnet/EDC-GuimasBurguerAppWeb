@@ -16,7 +16,9 @@ public class HamburgueriaDbContext : DbContext
             .Build();
 
         string conn = config.GetConnectionString("Conn");
+        //string conn = config.GetConnectionString("ConnSqLite");
 
         optionsBuilder.UseSqlServer(conn);
+        //optionsBuilder.UseSqlite(conn);
     }
 }

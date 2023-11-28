@@ -17,6 +17,10 @@
             <li><label asp-for="Hamburguer.Preco"></label>: @Html.DisplayFor(model => model.Hamburguer.Preco)</li>
             <li><label asp-for="Hamburguer.EntregaExpressa"></label>: @Model.Hamburguer.EntregaExpressaFormatada</li>
             <li><label asp-for="Hamburguer.DataCadastro"></label>: @Html.DisplayFor(model => model.Hamburguer.DataCadastro)</li>
+            @if (Model.Marca is not null)
+            {
+                <li><label asp-for="Hamburguer.MarcaId"></label>: @Html.DisplayFor(model => model.Marca.Descricao)</li>
+            }
         </ul>
         <a class="btn my-3 btn-primary" 
         asp-page="Edit" asp-route-id="@Model.Hamburguer.HamburguerId">Editar</a>

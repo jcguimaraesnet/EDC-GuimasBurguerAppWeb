@@ -22,7 +22,8 @@ public class HamburguerService : IHamburguerService
         hamburguerEncontrado.EntregaExpressa = hamburguer.EntregaExpressa;
         hamburguerEncontrado.DataCadastro = hamburguer.DataCadastro;
         hamburguerEncontrado.ImagemUri = hamburguer.ImagemUri;
-        
+        hamburguerEncontrado.MarcaId = hamburguer.MarcaId;
+
         _context.SaveChanges();
     }
 
