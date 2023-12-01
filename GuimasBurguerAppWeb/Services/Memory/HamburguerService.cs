@@ -97,4 +97,15 @@ public class HamburguerService : IHamburguerService
             new Marca() { Descricao = "Seara" },
         };
     }
+
+    public IList<Categoria> ObterTodasAsCategorias()
+    {
+        return new List<Categoria>()
+        {
+            new Categoria() { Descricao = "Apimentado" },
+            new Categoria() { Descricao = "Sem Gluten" },
+            new Categoria() { Descricao = "Vegano" },
+            new Categoria() { Descricao = "Zero Lactose" },
+        };
+    }
 }

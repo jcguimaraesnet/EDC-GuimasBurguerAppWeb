@@ -41,4 +41,6 @@ public class Hamburguer
     [Display(Name = "Marca")]
     public int? MarcaId { get; set; }
 
+    public ICollection<Categoria>? Categorias { get; set; }
+
 }
