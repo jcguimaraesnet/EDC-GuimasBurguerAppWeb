@@ -1,5 +1,6 @@
 using GuimasBurguerAppWeb.Models;
 using GuimasBurguerAppWeb.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,6 +8,7 @@ using NToastNotify;
 
 namespace GuimasBurguerAppWeb.Pages
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private IToastNotification _toastNotification;

@@ -28,8 +28,11 @@
                 </li>
             }
         </ul>
-        <a class="btn my-3 btn-primary" 
-        asp-page="Edit" asp-route-id="@Model.Hamburguer.HamburguerId">Editar</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a class="btn my-3 btn-primary" 
+            asp-page="Edit" asp-route-id="@Model.Hamburguer.HamburguerId">Editar</a>
+        }
     </div>
 
 </div>

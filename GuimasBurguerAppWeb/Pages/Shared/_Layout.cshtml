@@ -32,13 +32,16 @@
                             <a class="nav-link" asp-page="/Privacy">Privacidade</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Create">Inclusão</a>
+                            <a class="nav-link" asp-page="/Create">Hamburguer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Marcas/Index">Marca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Categorias/Index">Categoria</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-sm-2" type="search" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
