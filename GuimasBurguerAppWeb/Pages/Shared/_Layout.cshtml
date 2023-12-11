@@ -31,15 +31,18 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Privacy">Privacidade</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Create">Hamburguer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Marcas/Index">Marca</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Categorias/Index">Categoria</a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Create">Hamburguer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Marcas/Index">Marca</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Categorias/Index">Categoria</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

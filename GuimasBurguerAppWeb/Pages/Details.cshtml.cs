@@ -21,7 +21,7 @@ public class DetailsModel : PageModel
     {
         Hamburguer = _service.Obter(id);
         Marca = _service.ObterTodasAsMarcas().SingleOrDefault(item => item.MarcaId == Hamburguer.MarcaId);
-
+        
         if (Hamburguer == null)
         {
             return NotFound();
